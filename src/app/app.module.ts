@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { CustomAutocompleteControlRenderer } from './custom.autocomplete';
 import { DataDisplayComponent } from './data.control';
 import { LangComponent } from './lang.control';
+import { MatButton } from '@angular/material/button';
+import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +29,11 @@ import { LangComponent } from './lang.control';
     JsonFormsAngularMaterialModule,
     MatAutocompleteModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    MatButton,
+    HttpClientModule,
+    MatButtonToggleGroup,
+    MatButtonToggle,
+    FormsModule
   ],
   schemas: [],
   bootstrap: [AppComponent]

@@ -16,6 +16,9 @@
           "type": "string",
           "minLength": 5
         },
+        "showFields": {
+          "type": "boolean"
+        },
         "description": {
           "type": "string"
         },

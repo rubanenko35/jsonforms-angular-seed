@@ -28,21 +28,8 @@
                       "rule": {
                         "effect": "DISABLE",
                         "condition": {
-                          "type": "OR",
-                          "conditions": [
-                            {
-                              "scope": "#/properties/showFields",
-                              "schema": { "const": true }
-                            },
-                            {
-                              "scope": "#",
-                              "schema": {
-                                "properties": {
-                                  "title": { "const": "foo" }
-                                }
-                              }
-                            }
-                          ]
+                          "scope": "#/properties/title",
+                          "schema": { "const": "10" }
                         }
                       }
                     },
@@ -53,13 +40,6 @@
                   ]
                 },
                 {
-                  "rule": {
-                    "effect": "SHOW",
-                    "condition": {
-                      "scope": "#/properties/showFields",
-                      "schema": { "const": true }
-                    }
-                  },
                   "type": "VerticalLayout",
                   "elements": [
                     {
