@@ -13,6 +13,9 @@ import { LangComponent } from './lang.control';
 import { MatButton } from '@angular/material/button';
 import { MatButtonToggle, MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { DemoComponent } from './demo/demo.component';
+import { BuilderTestComponent } from './builder-test/builder-test.component';
 
 
 @NgModule({
@@ -33,7 +36,17 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatButtonToggleGroup,
     MatButtonToggle,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: BuilderTestComponent
+      },
+      {
+        path: 'demo',
+        component: DemoComponent
+      }
+    ])
   ],
   schemas: [],
   bootstrap: [AppComponent]
