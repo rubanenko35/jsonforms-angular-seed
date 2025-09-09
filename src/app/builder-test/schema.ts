@@ -1,6 +1,6 @@
 export const RESOURCE_SCHEMA = {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://development-enterprise.hta.cloud/data/v1/service/api/types/StarsEnterprise.GasBottles.Bottle/code/JsonSchema?generateMetadata=true",
+  // "$schema": "http://json-schema.org/draft-04/schema#",
+  // "id": "http://development-enterprise.hta.cloud/data/v1/service/api/types/StarsEnterprise.GasBottles.Bottle/code/JsonSchema?generateMetadata=true",
   "title": "StarsEnterprise.GasBottles.Bottle",
   "type": "object",
   "description": "This resource type describes a gas bottle",

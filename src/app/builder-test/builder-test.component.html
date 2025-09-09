@@ -1,12 +1,17 @@
 <h1>builder-test</h1>
-<section>
-<!--  <jsonforms-->
-<!--    [data]="data"-->
-<!--    [schema]="schema"-->
-<!--    [uischema]="uiSchema"-->
-<!--    [renderers]="renderers"-->
-<!--    [ajv]="ajv"-->
-<!--    (dataChange)="dataChange($event)"-->
-<!--    (errors)="emittedErrors($event)"-->
-<!--  ></jsonforms>-->
+<section class="custom-row">
+  <div class="flex-item">
+    <jsonforms
+      [data]="data"
+      [schema]="schema"
+      [uischema]="uiSchema"
+      [renderers]="renderers"
+      [ajv]="ajv"
+      (dataChange)="dataChange($event)"
+      (errors)="emittedErrors($event)"
+    ></jsonforms>
+  </div>
+  <div class="flex-item">
+    {{ formData | json }}
+  </div>
 </section>
