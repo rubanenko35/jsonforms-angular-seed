@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonFormsModule } from '@jsonforms/angular';
-import { REPORT_SCHEMA, RESOURCE_SCHEMA } from './schema';
+import { DEMO_SCHEMA, REPORT_SCHEMA, RESOURCE_SCHEMA } from './schema';
 import { createAjv, JsonSchema, UISchemaElement } from '@jsonforms/core';
 import { angularMaterialRenderers } from '@jsonforms/angular-material';
 import { GENERATED_UI_SCHEMA } from './mapper-example';
@@ -25,25 +25,27 @@ export class BuilderTestComponent implements OnInit {
 
   ajv = createAjv({
     schemaId: 'id',
-    allErrors: true
+    allErrors: true,
+    useDefaults: true
   });
 
 
   protected readonly data = {};
 
   // This mapper is more accurate
-  protected testUiSchema =  mapResourceTypeToUISchema(REPORT_TYPE, REPORT_SCHEMA);
+  protected testUiSchema =  mapResourceTypeToUISchema(RESOURCE_TYPE, RESOURCE_SCHEMA);
   protected testUiSchema2 =  mapToUISchema(REPORT_TYPE as any, REPORT_SCHEMA);
 
-  protected readonly uiSchema: UISchemaElement = this.testUiSchema; // GENERATED_UI_SCHEMA;
+  protected readonly uiSchema: UISchemaElement = null as any; // this.testUiSchema; // GENERATED_UI_SCHEMA;
 
-  protected readonly schema: JsonSchema = RESOURCE_SCHEMA;
+  protected readonly schema: JsonSchema = DEMO_SCHEMA;
+
 
   protected formData: any = {};
 
   ngOnInit(): void {
-    console.log('mapResourceTypeToUISchema', this.testUiSchema);
-    console.log('mapToUISchema', this.testUiSchema);
+    // console.log('mapResourceTypeToUISchema', this.testUiSchema);
+    // console.log('mapToUISchema', this.testUiSchema);
   }
 
   protected dataChange(data: any) {

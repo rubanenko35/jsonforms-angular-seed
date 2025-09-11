@@ -1,3 +1,42 @@
+export const DEMO_SCHEMA = {
+  "title": "User account",
+  "type": "object",
+  "properties": {
+    "accountType": {
+      "type": "string",
+      "default": "personal",
+      "enum": ["personal", "business"]
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "companyName": {
+      "type": "string"
+    }
+  },
+  "required": ["accountType"],
+  "allOf": [
+    {
+      "if": {
+        "properties": { "accountType": { "const": "personal" } }
+      },
+      "then": {
+        "required": ["age"],
+        "properties": {
+          "age": { "minimum": 18 },
+          "companyName": { "type": "null" }
+        }
+      },
+      "else": {
+        "required": ["companyName"]
+      }
+    }
+  ]
+}
+
+
+
 export const RESOURCE_SCHEMA = {
   // "$schema": "http://json-schema.org/draft-04/schema#",
   // "id": "http://development-enterprise.hta.cloud/data/v1/service/api/types/StarsEnterprise.GasBottles.Bottle/code/JsonSchema?generateMetadata=true",
@@ -234,8 +273,6 @@ export const RESOURCE_SCHEMA = {
 
 
 export const REPORT_SCHEMA = {
-  // "$schema": "http://json-schema.org/draft-04/schema#",
-  // "id": "http://development-enterprise.hta.cloud/data/v1/service/api/types/StarsEnterprise.Reports.Report/code/JsonSchema?generateMetadata=true",
   "title": "StarsEnterprise.Reports.Report",
   "type": "object",
   "description": "The report definition.",
