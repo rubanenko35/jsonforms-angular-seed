@@ -1,4 +1,4 @@
-<h1>builder-test</h1>
+<h1>{{ title }}</h1>
 <section class="custom-row">
   <div class="flex-item">
     <jsonforms
@@ -11,7 +11,7 @@
       (errors)="emittedErrors($event)"
     ></jsonforms>
   </div>
-  <div class="flex-item">
+  <div class="flex-item json-value">
     {{ formData | json }}
   </div>
 </section>

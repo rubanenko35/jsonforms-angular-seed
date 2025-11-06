@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DemoComponent } from './demo/demo.component';
 import { BuilderTestComponent } from './builder-test/builder-test.component';
+import { ACCOUNT_SCHEMA, ALL_TYPES_SCHEMA } from './builder-test/schema';
+import { ALL_TYPES_UI_SCHEMA } from './builder-test/ui-schema';
 
 
 @NgModule({
@@ -40,6 +42,34 @@ import { BuilderTestComponent } from './builder-test/builder-test.component';
     RouterModule.forRoot([
       {
         path: '',
+        pathMatch: 'full',
+        redirectTo: 'account'
+      },
+      {
+        path: 'account',
+        data: {
+          title: 'Account',
+          uiSchema: null,
+          schema: ACCOUNT_SCHEMA
+        },
+        component: BuilderTestComponent
+      },
+      {
+        path: 'all-types',
+        data: {
+          title: 'All Types',
+          uiSchema: null,
+          schema: ALL_TYPES_SCHEMA
+        },
+        component: BuilderTestComponent
+      },
+      {
+        path: 'all-types-ui',
+        data: {
+          title: 'All Types UI',
+          uiSchema: ALL_TYPES_UI_SCHEMA,
+          schema: ALL_TYPES_SCHEMA
+        },
         component: BuilderTestComponent
       },
       {

@@ -1,4 +1,6 @@
-export const DEMO_SCHEMA = {
+import { JsonSchema } from '@jsonforms/core';
+
+export const ACCOUNT_SCHEMA = {
   "title": "User account",
   "type": "object",
   "properties": {
@@ -35,7 +37,200 @@ export const DEMO_SCHEMA = {
   ]
 }
 
-
+export const ALL_TYPES_SCHEMA: JsonSchema = {
+  "title": "StarsEnterprise.Examples.ExampleCustomViewAllTypesReferencesUpdated",
+  "type": "object",
+  "description": "This is an example result type used for development",
+  "additionalItems": false,
+  "required": [
+    "SimpleString",
+    "Byte",
+    "PositiveNumber"
+  ],
+  "properties": {
+    "SimpleBool": {
+      "type": "boolean",
+      "description": "This is a simple boolean property"
+    },
+    "SimpleInteger": {
+      "type": "number",
+      "description": "This is a simple integer property",
+    },
+    "SimpleString": {
+      "type": "string",
+      "description": "This is a simple string property",
+    },
+    "SimpleNumber": {
+      "type": "number",
+      "description": "This is a simple number property",
+    },
+    "NumberWithUnit": {
+      "type": "number",
+      "description": "This is a number with unit property"
+    },
+    "DeletedNumber": {
+      "type": "number",
+      "description": "This property should not be displayed in the UI",
+    },
+    "ReadonlyNumber": {
+      "type": "number",
+      "description": "This number can not be changed"
+    },
+    "SimpleDateTime": {
+      "type": "string",
+      "description": "This is a simple date/time property",
+      "format": "date-time",
+    },
+    "SimpleDate": {
+      "type": "string",
+      "description": "This is a simple date property"
+    },
+    "SimpleTime": {
+      "type": "number",
+      "description": "This is a simple time property"
+    },
+    "SimpleTimeSpan": {
+      "type": "number"
+    },
+    "TimeSpanWithLimits": {
+      "type": "number",
+      "description": "This time span can be between 0 and 1 day",
+      "maximum": 86400.0,
+      "minimum": 0.0
+    },
+    "Byte": {
+      "type": "number",
+      "description": "This number can be only between 0 and 255",
+      "maximum": 255.0,
+      "minimum": 0.0
+    },
+    "StringWithOnlyLetters": {
+      "type": "string",
+      "description": "This string can only contain letters",
+      "pattern": "^[A-Za-z]+$"
+    },
+    "PositiveNumber": {
+      "type": "number",
+      "description": "This number must be greater than 0",
+      "minimum": 0.0
+    },
+    "State": {
+      "type": "object",
+      "description": "The state of the test",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "enum": [
+            "New",
+            "Running",
+            "Finished",
+            "Aborted"
+          ]
+        }
+      }
+    },
+    "SimpleReferenceType": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "ConfiguredReference": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "ConfiguredReference2": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "ConfiguredComplexReference": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "MissingReferenceType": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "NotExistingReferenceType": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "ModifiedAtDate": {
+      "type": "string",
+      "description": "The date of modifying staff member's personnel file"
+    },
+    "ConfiguredComplexReferenceWithoutAndOr": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    },
+    "MissingReferenceTypeTEsssss": {
+      "type": "object",
+      "description": "This is an example reference",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Version": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
 
 export const RESOURCE_SCHEMA = {
   // "$schema": "http://json-schema.org/draft-04/schema#",
