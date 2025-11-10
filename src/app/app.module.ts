@@ -18,6 +18,7 @@ import { DemoComponent } from './demo/demo.component';
 import { BuilderTestComponent } from './builder-test/builder-test.component';
 import { ACCOUNT_SCHEMA, ALL_TYPES_SCHEMA } from './builder-test/schema';
 import { ALL_TYPES_UI_SCHEMA } from './builder-test/ui-schema';
+import { CustomSchemaComponent } from './custom-schema/custom-schema.component';
 
 
 @NgModule({
@@ -71,6 +72,15 @@ import { ALL_TYPES_UI_SCHEMA } from './builder-test/ui-schema';
           schema: ALL_TYPES_SCHEMA
         },
         component: BuilderTestComponent
+      },
+      {
+        path: 'custom-schema',
+        data: {
+          title: 'Custom JSON Schema',
+          uiSchema: null,
+          schema: null
+        },
+        component: CustomSchemaComponent
       },
       {
         path: 'demo',

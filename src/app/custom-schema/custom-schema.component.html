@@ -1,0 +1,22 @@
+<h1>{{ title }} xxx</h1>
+<section class="custom-row">
+  <textarea [(ngModel)]="schemaStr" rows="20"></textarea>
+</section>
+
+
+
+<section class="custom-row">
+  <div class="flex-item">
+    <jsonforms
+      [data]="data"
+      [schema]="schema()"
+      [renderers]="renderers"
+      [ajv]="ajv"
+      (dataChange)="dataChange($event)"
+      (errors)="emittedErrors($event)"
+    ></jsonforms>
+  </div>
+  <div class="flex-item json-value">
+    {{ formData | json }}
+  </div>
+</section>
