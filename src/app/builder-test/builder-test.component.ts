@@ -1,20 +1,19 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { JsonFormsModule } from '@jsonforms/angular';
-import { REPORT_SCHEMA, RESOURCE_SCHEMA } from './schema';
 import { createAjv, JsonSchema, UISchemaElement } from '@jsonforms/core';
 import { angularMaterialRenderers } from '@jsonforms/angular-material';
-import { GENERATED_UI_SCHEMA } from './mapper-example';
-import { REPORT_TYPE, RESOURCE_TYPE } from './type';
-import { mapResourceTypeToUISchema } from './test';
 import { JsonPipe } from '@angular/common';
-import { mapToUISchema } from './ui-schema-mapper';
 import { ActivatedRoute } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 @Component({
   selector: 'app-builder-test',
   imports: [
     JsonFormsModule,
-    JsonPipe
+    JsonPipe,
+    FormsModule,
+    NgxJsonViewerModule
   ],
   templateUrl: './builder-test.component.html',
   styleUrl: './builder-test.component.scss'
@@ -42,6 +41,8 @@ export class BuilderTestComponent implements OnInit {
   protected readonly title: string;
   protected readonly uiSchema: UISchemaElement;
   protected readonly schema: JsonSchema; //  = DEMO_SCHEMA;
+  protected readonly schemaStr: string;
+  protected readonly uiSchemaStr: string;
 
   protected formData: any = {};
 
@@ -49,6 +50,8 @@ export class BuilderTestComponent implements OnInit {
     this.title = this.activatedRoute.snapshot.data['title'];
     this.uiSchema = this.activatedRoute.snapshot.data['uiSchema'] as UISchemaElement;
     this.schema = this.activatedRoute.snapshot.data['schema'] as JsonSchema;
+    this.schemaStr = JSON.stringify(this.schema, null, 2);
+    this.uiSchemaStr = JSON.stringify(this.uiSchema, null, 2);
   }
 
   ngOnInit(): void {

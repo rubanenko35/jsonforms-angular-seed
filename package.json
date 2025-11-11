@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@alenaksu/json-viewer": "^2.1.2",
     "@angular/animations": "^19.0.0",
     "@angular/cdk": "^19.0.0",
     "@angular/common": "^19.0.0",
@@ -28,6 +29,7 @@
     "dayjs": "^1.11.10",
     "json-refs": "^3.0.4",
     "libphonenumber-js": "^1.6.8",
+    "ngx-json-viewer": "^3.2.1",
     "path": "^0.12.7",
     "random-words": "^2.0.0",
     "rxjs": "^6.5.4",

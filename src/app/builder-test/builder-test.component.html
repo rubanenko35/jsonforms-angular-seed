@@ -15,3 +15,12 @@
     {{ formData | json }}
   </div>
 </section>
+<section class="custom-row">
+  <h4>JSON Schema</h4>
+  <ngx-json-viewer [json]="schema"></ngx-json-viewer>
+</section>
+<section class="custom-row">
+  <h4>UI Schema</h4>
+  <ngx-json-viewer [json]="uiSchema"></ngx-json-viewer>
+</section>
+
